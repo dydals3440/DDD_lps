@@ -1,5 +1,6 @@
 import AxiosClient from '#/adapters/infrastructures/AxiosClient';
 import LpRepository from '#/adapters/repositories/LpRepository';
+import UserRepository from '#/adapters/repositories/UserRepository';
 import IRepositories from '#/di/interfaces/IRepositories';
 
 export default (baseUrl: string): IRepositories => {
@@ -7,5 +8,6 @@ export default (baseUrl: string): IRepositories => {
 
   return {
     lp: new LpRepository(axiosClient),
+    user: new UserRepository(axiosClient),
   };
 };
